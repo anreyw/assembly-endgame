@@ -1,7 +1,9 @@
-import Header from '@/app/header'
-
 export default function AssemblyEndgame() {
   return (
-    <Header />
+    <main>
+      <section>
+	<h2>You won!</h2>
+      </section>
+    </main>
   );
 }
