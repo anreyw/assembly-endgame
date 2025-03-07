@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
+import Header from '@/app/header';
 
 const geist = Geist({
   subsets: ["latin"],
@@ -18,7 +19,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={geist.className}>
-      <body className="bg-zinc-800 w-screen p-8 flex justify-center">
+      <body className="bg-zinc-800 w-screen p-8 flex flex-col items-center justify-center">
+	<Header />
         {children}
       </body>
     </html>
