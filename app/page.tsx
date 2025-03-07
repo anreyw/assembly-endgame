@@ -1,7 +1,11 @@
 export default function AssemblyEndgame() {
   return (
-    <main className="">
-      <h1>Game goes here</h1>
-    </main>
+    <header className="">
+      <h1>Assembly: Endgame</h1>
+      <p>
+	   Guess the word in under 8 attempts to keep the
+           programming world safe from Assembly!
+      </p>
+    </header>
   );
 }
