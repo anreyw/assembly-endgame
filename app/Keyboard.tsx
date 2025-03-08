@@ -4,7 +4,7 @@ export default function Keyboard() {
   const keyboardEl = alphabet.map(letter => (
     <button
       key={letter}
-      className="size-10 bg-yellow-300 rounded border border-amber-100"
+      className="size-10 bg-yellow-300 rounded border border-amber-100 cursor-pointer"
     >
       {letter.toUpperCase()}
     </button>
