@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={geist.className}>
-      <body className="bg-zinc-800 w-screen p-8 flex flex-col items-center justify-center">
+      <body className="bg-zinc-800 w-screen p-8 flex flex-col gap-4 items-center justify-center">
 	<Header />
         {children}
       </body>
