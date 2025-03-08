@@ -1,6 +1,7 @@
 import Status from '@/app/Status'
 import LanguageChips from '@/app/LanguageChips'
 import WordDisplay from '@/app/WordDisplay'
+import Keyboard from '@/app/Keyboard'
 
 export default function AssemblyEndgame() {
   return (
@@ -8,6 +9,7 @@ export default function AssemblyEndgame() {
       <Status />
       <LanguageChips />
       <WordDisplay />
+      <Keyboard />
     </main>
   );
 }
