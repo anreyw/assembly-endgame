@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
-import Header from '@/app/header';
+import Header from '@/app/Header';
 
 const geist = Geist({
   subsets: ["latin"],
