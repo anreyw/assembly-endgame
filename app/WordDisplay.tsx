@@ -1,14 +1,15 @@
 interface WordDisplayProps {
-  currentWord: string
+  currentWord: string;
+  guessedLetters: string[]
 }
 
-export default function WordDisplay({ currentWord }: WordDisplayProps) {
+export default function WordDisplay({ currentWord, guessedLetters }: WordDisplayProps) {
   const letterElements = [...currentWord].map((letter, index) => (
     <span
       key={index}
-      className="text-white bg-zinc-700 py-2 px-4 border-b border-b-white text-lg"
+      className="text-white bg-zinc-700 size-12 border-b border-b-white text-2xl flex justify-center items-center font-semibold"
     >
-      {letter.toUpperCase()}
+      {guessedLetters.includes(letter) ? letter.toUpperCase() : ""}
     </span>
   ))
   
