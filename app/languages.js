@@ -25,7 +25,7 @@ export const languages = [
         color: "#F9F4DA",
     },
     {
-        name: "Node.js",
+        name: "Rust",
         backgroundColor: "#599137",
         color: "#F9F4DA",
     },
