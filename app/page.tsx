@@ -21,7 +21,11 @@ export default function AssemblyEndgame() {
       <Status />
       <LanguageChips />
       <WordDisplay currentWord={currentWord} />
-      <Keyboard handleClick={addGuessedLetter} />
+      <Keyboard
+	currentWord={currentWord}
+	guessedLetters={guessedLetters}
+	handleClick={addGuessedLetter}
+      />
       <button
 	className="py-2 px-5 bg-sky-400 cursor-pointer border border-sky-300 rounded"
       >New Game</button>
