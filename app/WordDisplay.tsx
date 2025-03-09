@@ -1,10 +1,8 @@
-'use client'
+interface WordDisplayProps {
+  currentWord: string
+}
 
-import { useState } from 'react'
-
-export default function WordDisplay() {
-  const [ currentWord, setCurrentWord ] = useState('nextjs')
-
+export default function WordDisplay({ currentWord }: WordDisplayProps) {
   const letterElements = [...currentWord].map((letter, index) => (
     <span
       key={index}
