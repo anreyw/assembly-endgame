@@ -1,7 +1,15 @@
+import { clsx } from 'clsx'
 import { languages } from '@/app/languages.js'
 
-export default function LanguageChips() {
-  const languageEls = languages.map(lang => {
+interface LanguageChipsProps {
+  wrongGuessCount: number
+}
+
+export default function LanguageChips(
+  { wrongGuessCount }: LanguageChipsProps
+) {  
+  const languageEls = languages.map((lang, index) => {
+    const isLangLost = index < wrongGuessCount
     const styles = {
       backgroundColor: lang.backgroundColor,
       color: lang.color
@@ -10,7 +18,11 @@ export default function LanguageChips() {
       <span
 	key={lang.name}
 	style={styles}
-	className="py-1 px-2 rounded"
+	className={
+	  clsx("py-1 px-2 rounded",
+	    isLangLost && "grayscale"
+	  )
+	}
       >
 	{lang.name}
       </span>
