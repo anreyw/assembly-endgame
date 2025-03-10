@@ -7,8 +7,14 @@ import WordDisplay from '@/app/WordDisplay'
 import Keyboard from '@/app/Keyboard'
 
 export default function AssemblyEndgame() {
+  
+  // State Values
   const [ currentWord, setCurrentWord ] = useState('nextjs')
   const [ guessedLetters, setGuessedLetters ] = useState<string[]>([])
+
+  // Derived Values
+  const wrongGuessCount: number =
+    guessedLetters.filter(letter => !currentWord.includes(letter)).length
 
   function addGuessedLetter(letter: string) {
     setGuessedLetters((prev: string[]) =>
