@@ -20,7 +20,7 @@ export default function LanguageChips(
 	style={styles}
 	className={
 	  clsx("py-1 px-2 rounded",
-	    isLangLost && "grayscale"
+	    isLangLost && "grayscale before:content-['💀']"
 	  )
 	}
       >
