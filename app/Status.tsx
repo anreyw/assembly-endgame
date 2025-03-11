@@ -1,17 +1,21 @@
 import { clsx } from 'clsx'
+import { languages } from '@/app/languages'
+import { getFarewellText } from '@/app/utils'
 
 interface StatusProps {
   isGameWon: boolean;
   isGameLost: boolean;
   isGameOver: boolean;
-  isLastGuessWrong: boolean
+  isLastGuessWrong: boolean;
+  wrongGuessCount: number
 }
 
 export default function Status({
   isGameWon,
   isGameLost,
   isGameOver,
-  isLastGuessWrong
+  isLastGuessWrong,
+  wrongGuessCount
 }: StatusProps) {
   const statusStyles = clsx("flex flex-col justify-center items-center w-full h-16 text-white rounded", {
     'bg-green-600': isGameWon,
@@ -37,7 +41,7 @@ export default function Status({
     } else if (!isGameOver && isLastGuessWrong) {
       return (
 	<>
-	  <p>Wrong answer.</p>
+	  <p>{getFarewellText(languages[wrongGuessCount - 1].name)}</p>
 	</>
       )
     }

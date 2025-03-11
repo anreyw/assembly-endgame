@@ -5,7 +5,7 @@ import Status from '@/app/Status'
 import LanguageChips from '@/app/LanguageChips'
 import WordDisplay from '@/app/WordDisplay'
 import Keyboard from '@/app/Keyboard'
-import { languages } from '@/app/languages.ts'
+import { languages } from '@/app/languages'
 
 export default function AssemblyEndgame() {
   
@@ -37,6 +37,7 @@ export default function AssemblyEndgame() {
 	isGameLost={isGameLost}
 	isGameOver={isGameOver}
 	isLastGuessWrong={isLastGuessWrong}
+	wrongGuessCount={wrongGuessCount}
       />
       <LanguageChips wrongGuessCount={wrongGuessCount} />
       <WordDisplay currentWord={currentWord} guessedLetters={guessedLetters} />
