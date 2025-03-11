@@ -1,12 +1,13 @@
 import { clsx } from 'clsx'
 
 interface KeyboardProps {
+  isGameOver: boolean;
   currentWord: string;
   guessedLetters: string[];
   handleClick: (letter: string) => void
 }
 
-export default function Keyboard({ currentWord, guessedLetters, handleClick }: KeyboardProps) {
+export default function Keyboard({ isGameOver, currentWord, guessedLetters, handleClick }: KeyboardProps) {
   const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
   const keyboardEl = alphabet.map(letter => {
@@ -15,7 +16,7 @@ export default function Keyboard({ currentWord, guessedLetters, handleClick }: K
     const isWrong = isGuessed && !currentWord.includes(letter)
     
     const buttonStyles = clsx(
-      "size-10 rounded border border-amber-100 cursor-pointer",
+      "size-10 rounded border border-amber-100 cursor-pointer disabled:cursor-not-allowed disabled:opacity-50",
       {
 	'bg-yellow-300': !isGuessed,
 	'bg-green-400': isCorrect,
@@ -28,6 +29,7 @@ export default function Keyboard({ currentWord, guessedLetters, handleClick }: K
       key={letter}
       className={buttonStyles}
       onClick={() => handleClick(letter)}
+      disabled={isGameOver}
     >
       {letter.toUpperCase()}
     </button>      
