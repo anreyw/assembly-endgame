@@ -29,7 +29,10 @@ export default function AssemblyEndgame() {
   
   return (
     <main className="flex flex-col items-center gap-4">
-      <Status />
+      <Status
+	isGameWon={isGameWon}
+	isGameLost={isGameLost}
+      />
       <LanguageChips wrongGuessCount={wrongGuessCount} />
       <WordDisplay currentWord={currentWord} guessedLetters={guessedLetters} />
       <Keyboard
