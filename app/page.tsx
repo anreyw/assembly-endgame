@@ -5,6 +5,7 @@ import Status from '@/app/Status'
 import LanguageChips from '@/app/LanguageChips'
 import WordDisplay from '@/app/WordDisplay'
 import Keyboard from '@/app/Keyboard'
+import { languages } from '@/app/languages.js'
 
 export default function AssemblyEndgame() {
   
@@ -15,6 +16,10 @@ export default function AssemblyEndgame() {
   // Derived Values
   const wrongGuessCount: number =
     guessedLetters.filter(letter => !currentWord.includes(letter)).length
+  const isGameWon =
+    [...currentWord].every(letter => guessedLetters.includes(letter))
+  const isGameLost = wrongGuessCount >= languages.length - 1
+  const isGameOver = isGameWon || isGameLost
 
   function addGuessedLetter(letter: string) {
     setGuessedLetters((prev: string[]) =>
@@ -32,9 +37,13 @@ export default function AssemblyEndgame() {
 	guessedLetters={guessedLetters}
 	handleClick={addGuessedLetter}
       />
-      <button
+      {isGameOver &&
+	<button
 	className="py-2 px-5 bg-sky-400 cursor-pointer border border-sky-300 rounded"
-      >New Game</button>
+	>
+	   New Game
+	</button>
+      }
     </main>
   );
 }
