@@ -5,7 +5,7 @@ import Status from '@/app/Status'
 import LanguageChips from '@/app/LanguageChips'
 import WordDisplay from '@/app/WordDisplay'
 import Keyboard from '@/app/Keyboard'
-import { languages } from '@/app/languages.js'
+import { languages } from '@/app/languages.ts'
 
 export default function AssemblyEndgame() {
   
@@ -20,6 +20,9 @@ export default function AssemblyEndgame() {
     [...currentWord].every(letter => guessedLetters.includes(letter))
   const isGameLost = wrongGuessCount >= languages.length - 1
   const isGameOver = isGameWon || isGameLost
+  const lastGuessedLetter = guessedLetters[guessedLetters.length - 1]
+  const isLastGuessWrong = guessedLetters.length != 0 &&
+    !currentWord.includes(lastGuessedLetter)
 
   function addGuessedLetter(letter: string) {
     setGuessedLetters((prev: string[]) =>
@@ -32,6 +35,8 @@ export default function AssemblyEndgame() {
       <Status
 	isGameWon={isGameWon}
 	isGameLost={isGameLost}
+	isGameOver={isGameOver}
+	isLastGuessWrong={isLastGuessWrong}
       />
       <LanguageChips wrongGuessCount={wrongGuessCount} />
       <WordDisplay currentWord={currentWord} guessedLetters={guessedLetters} />
