@@ -25,6 +25,7 @@ export default function AssemblyEndgame() {
   const isLastGuessWrong = guessedLetters.length != 0 &&
     !currentWord.includes(lastGuessedLetter)
 
+  // Helper Functions
   function addGuessedLetter(letter: string) {
     setGuessedLetters((prev: string[]) =>
       prev.includes(letter) ?  prev : [...prev, letter]
@@ -35,7 +36,8 @@ export default function AssemblyEndgame() {
     setCurrentWord(getRandomWord)
     setGuessedLetters([])
   }
-  
+
+  // Page Render
   return (
     <main className="flex flex-col items-center gap-4">
       <Status
