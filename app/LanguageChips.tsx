@@ -1,5 +1,5 @@
 import { clsx } from 'clsx'
-import { languages } from '@/app/languages.ts'
+import { languages } from '@/app/languages'
 
 interface LanguageChipsProps {
   wrongGuessCount: number
