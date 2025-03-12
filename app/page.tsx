@@ -48,7 +48,11 @@ export default function AssemblyEndgame() {
 	wrongGuessCount={wrongGuessCount}
       />
       <LanguageChips wrongGuessCount={wrongGuessCount} />
-      <WordDisplay currentWord={currentWord} guessedLetters={guessedLetters} />
+      <WordDisplay
+	currentWord={currentWord}
+	guessedLetters={guessedLetters}
+	isGameLost={isGameLost}
+      />
       <Keyboard
 	isGameOver={isGameOver}
 	currentWord={currentWord}
