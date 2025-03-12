@@ -11,7 +11,7 @@ import { getRandomWord } from '@/app/utils'
 export default function AssemblyEndgame() {
   
   // State Values
-  const [ currentWord, setCurrentWord ] = useState(() => getRandomWord())
+  const [ currentWord, setCurrentWord ] = useState(getRandomWord)
   const [ guessedLetters, setGuessedLetters ] = useState<string[]>([])
 
   // Derived Values
