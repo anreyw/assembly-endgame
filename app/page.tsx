@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Confetti from 'react-confetti'
+import { useWindowSize } from 'react-use'
 import Status from '@/app/Status'
 import LanguageChips from '@/app/LanguageChips'
 import WordDisplay from '@/app/WordDisplay'
@@ -10,6 +11,7 @@ import { languages } from '@/app/languages'
 import { getRandomWord } from '@/app/utils'
 
 export default function AssemblyEndgame() {
+  const { width, height } = useWindowSize()
   
   // State Values
   const [ currentWord, setCurrentWord ] = useState(getRandomWord)
@@ -43,6 +45,8 @@ export default function AssemblyEndgame() {
     <main className="flex flex-col items-center gap-4">
       {isGameWon &&
 	<Confetti
+	  width={width}
+	  height={height}
 	  recycle={false}
 	  gravity={.2}
 	/>
