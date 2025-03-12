@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Confetti from 'react-confetti'
 import Status from '@/app/Status'
 import LanguageChips from '@/app/LanguageChips'
 import WordDisplay from '@/app/WordDisplay'
@@ -40,6 +41,12 @@ export default function AssemblyEndgame() {
   // Page Render
   return (
     <main className="flex flex-col items-center gap-4">
+      {isGameWon &&
+	<Confetti
+	  recycle={false}
+	  gravity={.2}
+	/>
+      }
       <Status
 	isGameWon={isGameWon}
 	isGameLost={isGameLost}
